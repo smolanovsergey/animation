@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/media.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>OTHER PROJECTS</h1>
+	<section class="other_project">
+		<div class="items_container">
+			<div class="single_item card_1">
+				<div class="card-inner">
+					<span class="content-card-inner">
+						<p class="description_text">
+							Lorem ipsum dolor sit amet do sed consectetur adipiscing elit, 
+						</p>
+						<p class="title_text">
+							project name 1
+						</p>
+					</span>
+				</div>
+			</div>
+			<div class="single_item card_2">
+				<div class="card-inner">
+					<span class="content-card-inner">
+						<p class="description_text">
+							Lorem ipsum dolor sit amet do sed consectetur adipiscing elit, 
+						</p>
+						<p class="title_text">
+							project name 2
+						</p>
+					</span>
+				</div>
+			</div>
+			<div class="single_item card_3">
+				<div class="card-inner">
+					<span class="content-card-inner">
+						<p class="description_text">
+							Lorem ipsum dolor sit amet do sed consectetur adipiscing elit, 
+						</p>
+						<p class="title_text">
+							project name 3
+						</p>
+					</span>
+				</div>
+			</div>
+			<div class="single_item card_4">
+				<div class="card-inner">
+					<span class="content-card-inner">
+						<p class="description_text">
+							Lorem ipsum dolor sit amet do sed consectetur adipiscing elit, 
+						</p>
+						<p class="title_text">
+							project name 4
+						</p>
+					</span>
+				</div>
+			</div>
+			<div class="dublicate"></div>
+			<div class="more-info class-hide-description">
+						<p class="info-first">First ROW</p>
+						<p class="info-description">Lorem ipsum dolor sit amet do sed consectetur adipiscing elit, </p>
+			</div>
+		</div>
+	</section>
+	<footer>
+		
+	</footer>
+	<script type="text/javascript">
+		$('.single_item').click(function() {
+		  if (jQuery(window).width() > 600) {    
+				$(".more-info").addClass('class-show-description');
+				$(".more-info").removeClass('class-hide-description');
+				$(this).clone().appendTo($(".dublicate"));
+		  } else if (jQuery(window).width() < 600) {
+				$(".more-info").addClass('class-show-description');
+				$(".more-info").removeClass('class-hide-description');
+				$(".more-info").clone().appendTo($(this));
+		  }
+		});
+		jQuery(function($){
+		$(document).mouseup(function (e){ // событие клика по веб-документу
+			var div = $(".single_item, .more-info"); // тут указываем ID элемента
+			if (!div.is(e.target) // если клик был не по нашему блоку
+			    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+				$('.dublicate>div').remove();
+				$('.single_item>.more-info').remove(); 
+		    	$(".more-info").addClass('class-hide-description');
+				$(".more-info").removeClass('class-show-description');
+			}
+		});
+	});
+	</script>
+	<script>
+		
+</script>
+</body>
+</html>

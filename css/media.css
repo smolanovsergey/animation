@@ -1,0 +1,50 @@
+@media all and (max-width: 800px) and (min-width: 600px) {
+	.items_container{
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.single_item{
+		width: 49%;
+		margin: 1% 0;
+	}
+	.dublicate>div{
+		position: absolute;
+		width: 49%;
+		left: 0;
+		top: 0;
+		transition: all 200ms linear;
+		z-index: 100;
+	}
+	.more-info{
+		width: 50%;
+		margin: 0;
+	}
+	.items_container > :first-child { margin-left: 0; }
+	.items_container > :nth-child(4n) { margin-right: -2%; }
+}
+
+@media all and (max-width: 600px) and (min-width: 320px) {
+	.items_container{
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.single_item{
+		width: 100%;
+		margin: 1% 0;
+	}
+	.class-show-description{
+		width: 100%;
+	}
+	.card-inner>.more-info{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: block!important;
+	}
+	.items_container>.more-info{
+		display: none;
+	}
+}
